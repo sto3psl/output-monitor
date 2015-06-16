@@ -1,7 +1,7 @@
 var day = '6 16, 2015 '
 
 var events = {
-  '13:16:00': {
+  '14:00:00': {
     'name': 'Meteor',
     'description': 'Eine Einführung in die Webentwicklung mit Javascript',
     'type': 'Workshop',
@@ -25,7 +25,7 @@ var setEvent = function (event) {
     var result = (eventTime - now) / 1000
     console.log(result)
 
-    if (result < 0) {
+    if (result <= 0) {
       return 'Die Veranstaltung hat bereits begonnen.'
     } else {
       return 'In ' + Math.trunc(result) + ' Sekunden'

@@ -24,7 +24,6 @@ body {
   display: flex;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-size: 42px;
-  font-weight: 300;
   line-height: 1.5;
   overflow: hidden;
 }
@@ -41,6 +40,10 @@ section h2 {
   margin-bottom: calc(var(--border) / 2);
   width: 100%;
   line-height: 1em;
+}
+
+section h2 img {
+  float: right;
 }
 
 #feed {
