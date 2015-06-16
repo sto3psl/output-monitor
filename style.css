@@ -14,7 +14,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-size: 42px;
+  font-size: 4vh;
   line-height: 1.5;
   overflow: hidden;
 }
@@ -118,6 +118,10 @@ h2 {
   font-size: 1em;
 }
 
-main h1, main h2, main h3, main p {
+h3 {
+  font-size: 1.62em;
+}
+
+main h2, main h3, main p {
   width: 70%;
 }

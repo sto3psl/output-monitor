@@ -6,19 +6,20 @@ var events = {
     'description': 'weniger ist mehr',
     'people': 'Daniel Langner, Johannes Mey',
     'type': 'Workshop',
-    'room': 'E064',
-    'time': '13:40'
+    'room': 'E064'
+  },
+  '15:10:00': {
+    'name': '3D-Modellierung',
+    'description': 'Grundlagen mit Blender',
+    'people': 'Andreas Peetz',
+    'type': 'Workshop',
+    'room': 'E064'
   }
 }
 var event = Object.keys(events)
 console.log(event[0])
 
-var date = new Date(day + event[0])
-console.log(date.getHours())
-
-
 var setEvent = function (event) {
-
   var getTime = function () {
     var now = new Date()
     var eventTime = new Date(day + event)
@@ -31,7 +32,6 @@ var setEvent = function (event) {
     } else {
       return 'In ' + Math.trunc(result) + ' Sekunden'
     }
-
   }
 
   document.querySelector('#name').innerHTML = events[event].name
@@ -44,9 +44,11 @@ var setEvent = function (event) {
   console.log('updated event')
 }
 
-var updateEvent = setInterval(function () {
-  setEvent(event[0])
-}, 1000)
+setInterval(function () {
+  setEvent(event[1])
+}, 1000 * 5)
+
+setEvent(event[1])
 
 // Twitter Feed
 var config1 = {
@@ -58,7 +60,7 @@ var config1 = {
 
 twitterFetcher.fetch(config1)
 
-var updateTwitter = setInterval(function () {
+setInterval(function () {
   twitterFetcher.fetch(config1)
   console.log('updated')
 }, 1000 * 10) // update every 10 seconds
