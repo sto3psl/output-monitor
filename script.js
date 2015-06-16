@@ -1,9 +1,10 @@
 var day = '6 16, 2015 '
 
 var events = {
-  '14:00:00': {
-    'name': 'Meteor',
-    'description': 'Eine Einführung in die Webentwicklung mit Javascript',
+  '15:00:00': {
+    'name': 'Codegolf',
+    'description': 'weniger ist mehr',
+    'people': 'Daniel Langner, Johannes Mey',
     'type': 'Workshop',
     'room': 'E064',
     'time': '13:40'
@@ -35,6 +36,7 @@ var setEvent = function (event) {
 
   document.querySelector('#name').innerHTML = events[event].name
   document.querySelector('#description').innerHTML = events[event].description
+  document.querySelector('#people').innerHTML = events[event].people
   document.querySelector('#type').innerHTML = events[event].type
   document.querySelector('#room').innerHTML = events[event].room
   document.querySelector('#time').innerHTML = getTime()

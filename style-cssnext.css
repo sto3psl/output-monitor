@@ -19,7 +19,7 @@
 }
 
 body {
-  background: var(--red);
+  background: var(--blue);
   color: var(--dark-grey);
   display: flex;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -79,6 +79,7 @@ main {
   width: 70vw;
   height: 100vh;
   padding: var(--border);
+  padding-top: calc(var(--border) - 1vw);
 }
 
 .logo {
