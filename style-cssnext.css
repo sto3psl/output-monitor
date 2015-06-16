@@ -1,0 +1,115 @@
+/* Output Farben */
+:root {
+  --light-grey: #B3B3B3;
+  --dark-grey: #4D4D4D;
+  --purple: #E2007A;
+  --violett: #6D1F80;
+  --yellow: #FFCC00;
+  --blue: #008BD0;
+  --green: #97BF0D;
+  --red: #E53517;
+
+  --border: 5vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--red);
+  color: var(--dark-grey);
+  display: flex;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+section {
+  background: white;
+  height: 100vh;
+  width: 30vw;
+  padding: var(--border);
+}
+
+section h2 {
+  color: var(--blue);
+  margin-bottom: calc(var(--border) / 2);
+  width: 100%;
+  line-height: 1em;
+}
+
+#feed {
+  font-size: .5em;
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+#feed ul {
+  list-style-type: none;
+}
+
+#feed li {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+/*.user img {
+  border-radius: 50%;
+}*/
+
+span[data-scribe="element:name"], 
+/*a[data-scribe="element:url"],
+*/.user img, 
+.interact, 
+.timePosted {
+  display: none;
+}
+
+main {
+  color: white;
+  flex-direction: column;
+  width: 70vw;
+  height: 100vh;
+  padding: var(--border);
+}
+
+.logo {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: calc(var(--border) / 2);
+  width: 100%;
+}
+
+.cube object {
+  position: fixed;
+  bottom: var(--border);
+  right: var(--border);
+  width: 20vw;
+}
+
+object {
+  width: 30%;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.6em;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+main h1, main h2, main h3, main p {
+  width: 70%;
+}

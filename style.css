@@ -1,0 +1,119 @@
+/* Output Farben */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #E53517;
+  color: #4D4D4D;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+section {
+  background: white;
+  height: 100vh;
+  width: 30vw;
+  padding: 5vw;
+}
+
+section h2 {
+  color: #008BD0;
+  margin-bottom: 2.5vw;
+  width: 100%;
+  line-height: 1em;
+}
+
+#feed {
+  font-size: .5em;
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+#feed ul {
+  list-style-type: none;
+}
+
+#feed li {
+  padding: 20px 0;
+  border-bottom: 1px solid #B3B3B3;
+}
+
+/*.user img {
+  border-radius: 50%;
+}*/
+
+span[data-scribe="element:name"], 
+/*a[data-scribe="element:url"],
+*/.user img, 
+.interact, 
+.timePosted {
+  display: none;
+}
+
+main {
+  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70vw;
+  height: 100vh;
+  padding: 5vw;
+}
+
+.logo {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 2.5vw;
+  width: 100%;
+}
+
+.cube object {
+  position: fixed;
+  bottom: 5vw;
+  right: 5vw;
+  width: 20vw;
+}
+
+object {
+  width: 30%;
+}
+
+a {
+  color: #008BD0;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.6em;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+main h1, main h2, main h3, main p {
+  width: 70%;
+}
