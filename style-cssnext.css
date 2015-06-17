@@ -23,7 +23,7 @@ body {
   color: var(--dark-grey);
   display: flex;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-size: 42px;
+  font-size: 4vh;
   line-height: 1.5;
   overflow: hidden;
 }
@@ -44,6 +44,7 @@ section h2 {
 
 section h2 img {
   float: right;
+  height: 4vh;
 }
 
 #feed {
@@ -94,7 +95,7 @@ main {
   position: fixed;
   bottom: var(--border);
   right: var(--border);
-  width: 20vw;
+  height: 20vw;
 }
 
 object {

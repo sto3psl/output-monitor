@@ -35,6 +35,7 @@ section h2 {
 
 section h2 img {
   float: right;
+  height: 4vh;
 }
 
 #feed {
@@ -98,7 +99,7 @@ main {
   position: fixed;
   bottom: 5vw;
   right: 5vw;
-  width: 20vw;
+  height: 20vw;
 }
 
 object {
@@ -118,10 +119,6 @@ h2 {
   font-size: 1em;
 }
 
-h3 {
-  font-size: 1.62em;
-}
-
-main h2, main h3, main p {
-  width: 80%;
+main h1, main h2, main h3, main p {
+  width: 70%;
 }
