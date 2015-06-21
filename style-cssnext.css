@@ -95,7 +95,7 @@ main {
 
 #information {
   padding: calc(var(--border) / 2) 0 0 ;
-  width: 85%;
+  width: 90%;
 }
 
 #description {
@@ -106,6 +106,10 @@ main {
   display: flex;
   height: var(--border);
   justify-content: flex-end;
+}
+
+.logo object {
+  height: 100%;
 }
 
 .cube {
@@ -132,9 +136,12 @@ main {
 
   #information {
     width: 100%;
+    overflow: hidden;
   }
 
   h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 2em;
   }
 }
