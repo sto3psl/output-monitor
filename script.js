@@ -13,7 +13,7 @@ twitterFetcher.fetch(config1)
 //   console.log('updated')
 // }, 1000 * 10) // update every 10 seconds
 
-var day = '2015/06/21'
+var day = '2015/06/22'
 
 var event = [
   {
