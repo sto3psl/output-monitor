@@ -27,6 +27,7 @@ body {
   line-height: 1.6;
   height: 100vh;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -49,6 +50,10 @@ section {
   overflow: hidden;
   padding: var(--border);
   width: 30vw;
+}
+
+section h2 {
+  color: var(--blue);
 }
 
 h2 img {
@@ -115,6 +120,7 @@ main {
   }
 
   main {
+    padding: calc(var(--border) * 2) var(--border);
     width: 100vw;
   }
 
