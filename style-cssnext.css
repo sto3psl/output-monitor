@@ -23,7 +23,7 @@ body {
   color: var(--dark-grey);
   display: flex;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-size: 4vh;
+  font-size: 3.5vh;
   line-height: 1.6;
   height: 100vh;
   overflow: hidden;
@@ -37,6 +37,7 @@ a {
 
 h1 {
   font-size: 2.6em;
+  margin: calc(var(--border) / 2) 0 0;
 }
 
 h2 {
@@ -94,6 +95,11 @@ main {
 
 #information {
   padding: calc(var(--border) / 2) 0 0 ;
+  width: 85%;
+}
+
+#description {
+  margin: 0 0 calc(var(--border) / 2);
 }
 
 .logo {
@@ -122,6 +128,10 @@ main {
   main {
     padding: calc(var(--border) * 2) var(--border);
     width: 100vw;
+  }
+
+  #information {
+    width: 100%;
   }
 
   h1 {
