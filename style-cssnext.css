@@ -24,82 +24,9 @@ body {
   display: flex;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-size: 4vh;
-  line-height: 1.5;
-  overflow: hidden;
-}
-
-section {
-  background: white;
+  line-height: 1.6;
   height: 100vh;
-  width: 30vw;
-  padding: var(--border);
-}
-
-section h2 {
-  color: var(--blue);
-  margin-bottom: calc(var(--border) / 2);
-  width: 100%;
-  line-height: 1em;
-}
-
-section h2 img {
-  float: right;
-  height: 4vh;
-}
-
-#feed {
-  font-size: .5em;
-  max-height: 70vh;
   overflow: hidden;
-}
-
-#feed ul {
-  list-style-type: none;
-}
-
-#feed li {
-  padding: 20px 0;
-  border-bottom: 1px solid var(--light-grey);
-}
-
-/*.user img {
-  border-radius: 50%;
-}*/
-
-span[data-scribe="element:name"], 
-/*a[data-scribe="element:url"],
-*/.user img, 
-.interact, 
-.timePosted {
-  display: none;
-}
-
-main {
-  color: white;
-  flex-direction: column;
-  width: 70vw;
-  height: 100vh;
-  padding: var(--border);
-  padding-top: calc(var(--border) - 1vw);
-}
-
-.logo {
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: calc(var(--border) / 2);
-  width: 100%;
-}
-
-.cube object {
-  position: fixed;
-  bottom: var(--border);
-  right: var(--border);
-  height: 20vw;
-}
-
-object {
-  width: 30%;
 }
 
 a {
@@ -112,9 +39,87 @@ h1 {
 }
 
 h2 {
-  font-size: 1em;
+  font-size: 1.6em;
 }
 
-main h1, main h2, main h3, main p {
-  width: 70%;
+/*Twitter Feed*/
+section {
+  background: #fff;
+  font-size: 1.2rem;
+  overflow: hidden;
+  padding: var(--border);
+  width: 30vw;
 }
+
+h2 img {
+  color: var(--blue);
+  float: right;
+}
+
+#feed {
+  opacity: 1;
+  border-bottom: 1px solid var(--light-grey);
+  height: 75vh;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: calc(var(--border) / 2) 0;
+}
+
+span[data-scribe="element:name"],
+img[data-scribe="element:avatar"],
+.interact,
+.timePosted {
+  display: none;
+}
+
+/*Event Darstellung*/
+main {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: var(--border);
+  width: 70vw;
+}
+
+#information {
+  padding: calc(var(--border) / 2) 0 0 ;
+}
+
+.logo {
+  display: flex;
+  height: var(--border);
+  justify-content: flex-end;
+}
+
+.cube {
+  bottom: var(--border);
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: var(--border);
+}
+
+.cube object {
+  height: calc(var(--border) * 3);
+}
+
+@media (max-device-width: 420px) {
+  section {
+    display: none;
+  }
+
+  main {
+    width: 100vw;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+

@@ -1,4 +1,4 @@
-var day = '6 17, 2015 '
+var day = '2015/06/21'
 
 var events = {
   '15:00:00': {
@@ -22,15 +22,15 @@ console.log(event[0])
 var setEvent = function (event) {
   var getTime = function () {
     var now = new Date()
-    var eventTime = new Date(day + event)
+    var eventTime = new Date(day + ' ' + event)
     console.log(now + '\n' + eventTime)
-    var result = (eventTime - now) / 1000
+    var result = (eventTime - now) / 60000
     console.log(result)
 
     if (result <= 0) {
       return 'Die Veranstaltung hat bereits begonnen.'
     } else {
-      return 'In ' + Math.trunc(result) + ' Sekunden'
+      return 'In ' + Math.trunc(result) + ' Minuten'
     }
   }
 
@@ -44,15 +44,15 @@ var setEvent = function (event) {
   console.log('updated event')
 }
 
-setInterval(function () {
-  setEvent(event[1])
-}, 1000 * 5)
+// setInterval(function () {
+//   setEvent(event[1])
+// }, 1000 * 5)
 
 setEvent(event[1])
 
 // Twitter Feed
 var config1 = {
-  'id': '603484288626073601',
+  'id': '612537302854844416',
   'domId': 'feed',
   'maxTweets': 5,
   'enableLinks': true
@@ -60,7 +60,7 @@ var config1 = {
 
 twitterFetcher.fetch(config1)
 
-setInterval(function () {
-  twitterFetcher.fetch(config1)
-  console.log('updated')
-}, 1000 * 10) // update every 10 seconds
+// setInterval(function () {
+//   twitterFetcher.fetch(config1)
+//   console.log('updated')
+// }, 1000 * 10) // update every 10 seconds
