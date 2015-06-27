@@ -98,7 +98,7 @@ var setEvent = function (event) {
   document.querySelector('#description').innerHTML = event.description
   document.querySelector('#people').innerHTML = event.people
   document.querySelector('#type').innerHTML = event.type
-  document.querySelector('#room').innerHTML = event.room
+  document.querySelector('#room').innerHTML = 'Raum ' + event.room
   document.querySelector('#time').innerHTML = getTime()
 }
 
@@ -134,7 +134,6 @@ var xhr = new window.XMLHttpRequest()
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4 && xhr.status === 200) {
     events = JSON.parse(xhr.responseText)
-    console.log('Anzahl paralleler Veranstaltungen: ' + events.length)
     nextEvent = timeCheck(events)
     setEvent(nextEvent[0])
 
@@ -142,28 +141,28 @@ xhr.onreadystatechange = function () {
      * Timer um Twitterfeed zu aktualisieren und kommende
      * Veranstaltungen zu rotieren
      */
-    // setInterval(function () {
-    //   twitterFetcher.fetch(config1)
+    setInterval(function () {
+      twitterFetcher.fetch(config1)
 
-    //   if (j === nextEvent.length) {
-    //     j = 0
-    //   }
-    //   setEvent(nextEvent[j])
-    //   j++
-    // // aktualisiert alle 5 Sekunden | 1000ms * 5 = 5s
-    // }, 1000 * 5)
+      if (j === nextEvent.length) {
+        j = 0
+      }
+      setEvent(nextEvent[j])
+      j++
+    // aktualisiert alle 5 Sekunden | 1000ms * 5 = 5s
+    }, 1000 * 5)
 
     /*
      * Timer um Twitterfeed zu aktualisieren und kommende
      * Veranstaltungen zu rotieren
      */
-    // setInterval(function () {
-    //   nextEvent = timeCheck(events)
-    //   console.log('Aufkommende Veranstaltungen aktualisiert.')
-    //   console.log('Anzahl paralleler Veranstaltungen: ' + events.length)
-    //   setEvent(nextEvent[0])
-    // // aktualisiert alle 5 Minuten | 1000ms * 60 * 5 = 5min
-    // }, 1000 * 60 * 5)
+    setInterval(function () {
+      nextEvent = timeCheck(events)
+      console.log('Aufkommende Veranstaltungen aktualisiert.')
+      console.log('Anzahl paralleler Veranstaltungen: ' + events.length)
+      setEvent(nextEvent[0])
+    // aktualisiert alle 5 Minuten | 1000ms * 60 * 5 = 5min
+    }, 1000 * 60 * 5)
   }
 }
 

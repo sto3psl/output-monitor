@@ -34,7 +34,7 @@ a {
 
 h1 {
   font-size: 2.6em;
-  margin: 2.5vw 0 0;
+  /*margin: calc(var(--border) / 2) 0 0;*/
 }
 
 h2 {
@@ -42,10 +42,8 @@ h2 {
 }
 
 h3 {
+  font-size: 1em;
   font-weight: normal;
-  -webkit-align-self: flex-end;
-      -ms-flex-item-align: end;
-          align-self: flex-end;
 }
 
 /*Twitter Feed*/
@@ -124,18 +122,20 @@ main {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 5vw;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
 
-.logo object {
-  height: 100%;
+.logo > div {
   -webkit-align-self: flex-end;
       -ms-flex-item-align: end;
           align-self: flex-end;
+}
+
+.logo object {
+  height: 5vw;
 }
 
 .cube {
