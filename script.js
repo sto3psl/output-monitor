@@ -95,6 +95,9 @@ var setEvent = function (event) {
       break
   }
 
+  document.querySelector('#information').className = 'animated fadeIn'
+  document.querySelector('#type').className = 'animated fadeIn'
+
   // Informationen werden in der DOM geändert
   document.querySelector('#name').innerHTML = checkString(event.name)
   document.querySelector('#description').innerHTML = event.description
@@ -149,8 +152,14 @@ xhr.onreadystatechange = function () {
       if (j === nextEvent.length) {
         j = 0
       }
+      console.log(nextEvent.length)
       setEvent(nextEvent[j])
+      setTimeout(function () {
+        document.querySelector('#information').className = 'animated fadeOut'
+        document.querySelector('#type').className = 'animated fadeOut'
+      }, 9000)
       j++
+
     // aktualisiert alle 10 Sekunden | 1000ms * 10 = 10s
     }, 1000 * 10)
 

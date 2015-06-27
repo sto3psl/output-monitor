@@ -4,6 +4,8 @@
  * File: style-cssnext.css
  */
 
+ @import 'animate.css';
+
 /* Output Farben */
 :root {
   --light-grey: #B3B3B3;
@@ -25,7 +27,7 @@
 }
 
 body {
-  background: var(--blue);
+  background: white;
   color: var(--dark-grey);
   display: flex;
   font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -34,6 +36,7 @@ body {
   height: 100vh;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 1s ease-in;
 }
 
 a {
@@ -107,6 +110,11 @@ main {
 #information {
   padding: calc(var(--border) / 2) 0 0 ;
   width: 90%;
+}
+
+#information, 
+#type {
+  -vendor-animation-duration: 2s;
 }
 
 #description {

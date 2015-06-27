@@ -16,7 +16,7 @@
     "room": "E023"
   },
   {
-    "time": "14:03:00",
+    "time": "14:00:00",
     "name": "Gastvortrag Gene Myers",
     "description": "Director & Tschira Chair of Systems Biology </br> Max Planck Institute for Molecular Cell Biology and Genetics",
     "people": "",
@@ -48,7 +48,7 @@
     "room": "E009"
   },
   {
-    "time": "15:15:00",
+    "time": "15:30:00",
     "name": "RoSI:",
     "description": "Rollenbasierte Software-Infrastrukturen für kontextsensitive Systeme",
     "people": "Hannes Voigt",
@@ -105,7 +105,7 @@
   },
   {
     "time": "16:00:00",
-    "name": "Mehrwert von Informationsvisualisierungen",
+    "name": "Mehrwert von Informations&shyvisualisierungen",
     "description": " ",
     "people": "Jan Wojdziak",
     "type": "VORTRAG",
@@ -162,7 +162,7 @@
   {
     "time": "16:00:00",
     "name": "Preisverleihung",
-    "description": "most innovative </br> most creative",
+    "description": "most innovative - most creative",
     "people": "Prof. Dr. Michael Schefczyk </br> Katrin Kahle",
     "type": "VORTRAG",
     "room": "E023"
