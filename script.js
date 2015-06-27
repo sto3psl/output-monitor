@@ -60,6 +60,8 @@ var setEvent = function (event) {
 
     if (result <= 0) {
       return 'Die Veranstaltung hat bereits begonnen.'
+    } else if (result < 1) {
+      return 'In weniger als einer Minute'
     } else {
       return 'In ' + Math.round(result) + ' Minuten'
     }
@@ -159,10 +161,10 @@ xhr.onreadystatechange = function () {
     setInterval(function () {
       nextEvent = timeCheck(events)
       console.log('Aufkommende Veranstaltungen aktualisiert.')
-      console.log('Anzahl paralleler Veranstaltungen: ' + events.length)
+      console.log('Anzahl paralleler Veranstaltungen: ' + nextEvent.length)
       setEvent(nextEvent[0])
-    // aktualisiert alle 5 Minuten | 1000ms * 60 * 5 = 5min
-    }, 1000 * 60 * 5)
+    // aktualisiert jede Minuten | 1000ms * 60 * 1 = 1min
+    }, 1000 * 60 * 1)
   }
 }
 
