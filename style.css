@@ -184,7 +184,7 @@ main {
   }
 
   .logo object {
-    height: 7.5vw !important;
+    height: 7.5vw;
   }
 
   #information {
@@ -204,8 +204,11 @@ main {
   }
 
   main {
-    padding: 10vw 5vw;
     width: 100vw;
+  }
+
+  .logo object {
+    height: 10vw;
   }
 
   #information {

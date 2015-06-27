@@ -167,7 +167,7 @@ main {
   }
 
   .logo object {
-    height: calc(var(--border) * 1.5) !important;
+    height: calc(var(--border) * 1.5);
   }
 
   #information {
@@ -187,8 +187,11 @@ main {
   }
 
   main {
-    padding: calc(var(--border) * 2) var(--border);
     width: 100vw;
+  }
+
+  .logo object {
+    height: calc(var(--border) * 2);
   }
 
   #information {
