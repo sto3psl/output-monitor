@@ -13,11 +13,11 @@ twitterFetcher.fetch(config1)
 //   console.log('updated')
 // }, 1000 * 10) // update every 10 seconds
 
-var day = '2015/06/22'
+var day = '2015/06/27'
 
 var event = [
   {
-    'time': '14:30:00',
+    'time': '12:00:00',
     'name': 'Codegolf',
     'description': 'weniger ist mehr',
     'people': 'Daniel Langner, Johannes Mey',
@@ -25,7 +25,7 @@ var event = [
     'room': 'E064'
   },
   {
-    'time': '14:30:20',
+    'time': '12:00:00',
     'name': '3D-Modellierung',
     'description': 'Grundlagen mit Blender',
     'people': 'Andreas Peetz',
@@ -33,7 +33,7 @@ var event = [
     'room': 'E064'
   },
   {
-    'time': '14:30:40',
+    'time': '12:00:00',
     'name': 'Der Mehrwert von Informationsvisualisierungen',
     'description': ' ',
     'people': 'Bettina Kirchner, Martin Herrmann, Jan Wojdziak',
@@ -41,7 +41,7 @@ var event = [
     'room': 'E064'
   },
   {
-    'time': '14:30:30',
+    'time': '12:00:00',
     'name': 'Efficient Database Query Processing in Heterogeneous Environments',
     'description': ' ',
     'people': 'Tomas Karnagel',
@@ -49,7 +49,7 @@ var event = [
     'room': 'E064'
   },
   {
-    'time': '14:30:10',
+    'time': '12:01:00',
     'name': 'Mehr als die Summe seiner Teile:',
     'description': 'Entwicklung selbst-adaptiver Anwendungen für Gemischte Interaktion',
     'people': 'Maria Piechnick und Christian Piechnick',
@@ -58,7 +58,13 @@ var event = [
   }
 ]
 
-console.log(event)
+var nextEvent = []
+var j = 0
+
+console.log(event[0])
+
+// setEvent(timeCheck(event))
+
 
 var setEvent = function (event) {
   var getTime = function () {
@@ -97,7 +103,7 @@ var setEvent = function (event) {
 
 var timeCheck = function (event) {
   var now = new Date()
-  var mostRecent = event[0]
+  var mostRecent = []
   var d = 1000 * 10 ^ 1000000000
 
   for (var i = 0; i < event.length; i++) {
@@ -106,16 +112,29 @@ var timeCheck = function (event) {
     d = (d > diff && diff > 0) ? diff : d
 
     if (diff > 0 && diff <= d) {
-      mostRecent = event[i]
+      mostRecent.push(event[i])
     }
   }
 
-  console.log(mostRecent.name)
+  console.log(mostRecent[0].name)
   return mostRecent
 }
 
-setEvent(timeCheck(event))
+nextEvent = timeCheck(event)
+setEvent(nextEvent[0])
 
 setInterval(function () {
-  setEvent(timeCheck(event))
-}, 1000 * 1)
+  if (j === nextEvent.length) {
+    j = 0
+  }
+  setEvent(nextEvent[j])
+  j++
+  console.log(j)
+}, 1000 * 5)
+
+setInterval(function () {
+
+  nextEvent = timeCheck(event)
+  console.log(nextEvent)
+  setEvent(nextEvent[0])
+}, 1000 * 30)
