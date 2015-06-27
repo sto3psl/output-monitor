@@ -19,7 +19,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-size: 3.5vh;
   line-height: 1.6;
   height: 100vh;
@@ -156,6 +156,48 @@ main {
   height: 15vw;
 }
 
+@media (max-device-width: 1024px) {
+  section {
+    font-size: .9rem;
+  }
+
+  section h2 {
+    font-size: 1.2em;
+  }
+
+  section img {
+    height: 1.5em;
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+  }
+
+  section {
+    display: none;
+  }
+
+  main {
+    width: 100vw;
+    /*height: 80vh;*/
+  }
+
+  .logo object {
+    height: 7.5vw !important;
+  }
+
+  #information {
+    margin-top: 5vw;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .cube object {
+    height: 30vw;
+  }
+}
+
 @media (max-device-width: 420px) {
   section {
     display: none;
@@ -173,8 +215,11 @@ main {
 
   h1 {
     overflow: hidden;
-    text-overflow: ellipsis;
     font-size: 2em;
+    -webkit-hyphens: manual;
+       -moz-hyphens: manual;
+        -ms-hyphens: manual;
+            hyphens: manual;
   }
 }
 

@@ -151,8 +151,8 @@ xhr.onreadystatechange = function () {
       }
       setEvent(nextEvent[j])
       j++
-    // aktualisiert alle 5 Sekunden | 1000ms * 5 = 5s
-    }, 1000 * 5)
+    // aktualisiert alle 10 Sekunden | 1000ms * 10 = 10s
+    }, 1000 * 10)
 
     /*
      * Timer um Twitterfeed zu aktualisieren und kommende

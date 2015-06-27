@@ -28,7 +28,7 @@ body {
   background: var(--blue);
   color: var(--dark-grey);
   display: flex;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-size: 3.5vh;
   line-height: 1.6;
   height: 100vh;
@@ -139,6 +139,48 @@ main {
   height: calc(var(--border) * 3);
 }
 
+@media (max-device-width: 1024px) {
+  section {
+    font-size: .9rem;
+  }
+
+  section h2 {
+    font-size: 1.2em;
+  }
+
+  section img {
+    height: 1.5em;
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+  }
+
+  section {
+    display: none;
+  }
+
+  main {
+    width: 100vw;
+    /*height: 80vh;*/
+  }
+
+  .logo object {
+    height: calc(var(--border) * 1.5) !important;
+  }
+
+  #information {
+    margin-top: var(--border);
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .cube object {
+    height: calc(var(--border) * 6);
+  }
+}
+
 @media (max-device-width: 420px) {
   section {
     display: none;
@@ -156,8 +198,8 @@ main {
 
   h1 {
     overflow: hidden;
-    text-overflow: ellipsis;
     font-size: 2em;
+    hyphens: manual;
   }
 }
 
