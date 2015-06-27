@@ -94,7 +94,7 @@ var setEvent = function (event) {
       document.querySelector('body').style.background = '#6D1F80'
       break
   }
-
+  // fadeIn der "neuen" Veranstaltung
   document.querySelector('#information').className = 'animated fadeIn'
   document.querySelector('#type').className = 'animated fadeIn'
 
