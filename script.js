@@ -142,6 +142,7 @@ xhr.onreadystatechange = function () {
     nextEvent = timeCheck(events)
     setEvent(nextEvent[0])
 
+    var displayDuration = 1000 * 10
     /*
      * Timer um Twitterfeed zu aktualisieren und kommende
      * Veranstaltungen zu rotieren
@@ -154,14 +155,15 @@ xhr.onreadystatechange = function () {
       }
       console.log(nextEvent.length)
       setEvent(nextEvent[j])
+      // fadeOut der "alten" Veranstaltung nach 9s | 1000ms * 9 = 9s
       setTimeout(function () {
         document.querySelector('#information').className = 'animated fadeOut'
         document.querySelector('#type').className = 'animated fadeOut'
-      }, 9000)
+      }, displayDuration - 1000)
       j++
 
     // aktualisiert alle 10 Sekunden | 1000ms * 10 = 10s
-    }, 1000 * 10)
+    }, displayDuration)
 
     /*
      * Timer um Twitterfeed zu aktualisieren und kommende
@@ -180,3 +182,8 @@ xhr.onreadystatechange = function () {
 // lade Veranstaltungen
 xhr.open('GET', 'events.json', true)
 xhr.send()
+
+// blockiere scrollen auf mobilen Geräten
+document.addEventListener('touchmove', function (e) {
+  e.preventDefault()
+}, false)
