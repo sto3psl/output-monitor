@@ -1,0 +1,42 @@
+[
+  {
+    "time": "12:00:00",
+    "name": "Codegolf",
+    "description": "weniger ist mehr",
+    "people": "Daniel Langner, Johannes Mey",
+    "type": "Workshop",
+    "room": "E064"
+  },
+  {
+    "time": "12:00:00",
+    "name": "3D-Modellierung",
+    "description": "Grundlagen mit Blender",
+    "people": "Andreas Peetz",
+    "type": "Workshop",
+    "room": "E064"
+  },
+  {
+    "time": "12:00:00",
+    "name": "Der Mehrwert von Informationsvisualisierungen",
+    "description": " ",
+    "people": "Bettina Kirchner, Martin Herrmann, Jan Wojdziak",
+    "type": "Vortrag",
+    "room": "E064"
+  },
+  {
+    "time": "12:00:00",
+    "name": "Efficient Database Query Processing in Heterogeneous Environments",
+    "description": " ",
+    "people": "Tomas Karnagel",
+    "type": "Vortrag",
+    "room": "E064"
+  },
+  {
+    "time": "12:01:00",
+    "name": "Mehr als die Summe seiner Teile:",
+    "description": "Entwicklung selbst-adaptiver Anwendungen für Gemischte Interaktion",
+    "people": "Maria Piechnick und Christian Piechnick",
+    "type": "Vortrag",
+    "room": "E064"
+  }
+]

@@ -1,4 +1,32 @@
-// Twitter Feed
+/*
+ * Author: Fabian Gündel
+ * Github: https://github.com/sto3psl
+ * File: script.js
+ */
+
+/*
+ * =================
+ * GLOBALE VARIABLEN
+ * =================
+ */
+
+// Tag an dem die Veranstaltung stattfindet
+var day = '2015/06/28'
+
+// events enthält alle Veranstaltungen aus events.json
+var events = []
+// nextEvent enthält alle Events die als nächstes stattfinden
+var nextEvent = []
+// Zählvariable um durch alle Veranstaltungen von nextEvent zu rotieren
+var j = 0
+
+/*
+ * ======================
+ * CONFIG FÜR TWITTERFEED
+ * ======================
+ */
+
+// id enthält die ID des Twitter Widgets
 var config1 = {
   'id': '612537302854844416',
   'domId': 'feed',
@@ -6,83 +34,42 @@ var config1 = {
   'enableLinks': true
 }
 
+// Twitterfeed beim Laden der Seite mitladen
 twitterFetcher.fetch(config1)
 
-// setInterval(function () {
-//   twitterFetcher.fetch(config1)
-//   console.log('updated')
-// }, 1000 * 10) // update every 10 seconds
+/*
+ * ========================================================
+ * FUNKTIONEN ZUR DARSTELLUNG DER RICHTIGEN VERANSTALTUNGEN
+ * ========================================================
+ */
 
-var day = '2015/06/27'
-
-var event = [
-  {
-    'time': '12:00:00',
-    'name': 'Codegolf',
-    'description': 'weniger ist mehr',
-    'people': 'Daniel Langner, Johannes Mey',
-    'type': 'Workshop',
-    'room': 'E064'
-  },
-  {
-    'time': '12:00:00',
-    'name': '3D-Modellierung',
-    'description': 'Grundlagen mit Blender',
-    'people': 'Andreas Peetz',
-    'type': 'Workshop',
-    'room': 'E064'
-  },
-  {
-    'time': '12:00:00',
-    'name': 'Der Mehrwert von Informationsvisualisierungen',
-    'description': ' ',
-    'people': 'Bettina Kirchner, Martin Herrmann, Jan Wojdziak',
-    'type': 'Vortrag',
-    'room': 'E064'
-  },
-  {
-    'time': '12:00:00',
-    'name': 'Efficient Database Query Processing in Heterogeneous Environments',
-    'description': ' ',
-    'people': 'Tomas Karnagel',
-    'type': 'Vortrag',
-    'room': 'E064'
-  },
-  {
-    'time': '12:01:00',
-    'name': 'Mehr als die Summe seiner Teile:',
-    'description': 'Entwicklung selbst-adaptiver Anwendungen für Gemischte Interaktion',
-    'people': 'Maria Piechnick und Christian Piechnick',
-    'type': 'Vortrag',
-    'room': 'E064'
-  }
-]
-
-var nextEvent = []
-var j = 0
-
-console.log(event[0])
-
-// setEvent(timeCheck(event))
-
-
+/*
+ * setEvent schreibt die Informationen der kommenden
+ * Veranstaltung in die DOM
+ */
 var setEvent = function (event) {
+  /*
+   * getTime vergleicht die aktuelle Uhrzeit mit der Startzeit
+   * der kommenden Veranstaltung
+   */
   var getTime = function () {
     var now = new Date()
     var eventTime = new Date(day + ' ' + event.time)
-    // console.log(now + '\n' + eventTime)
-    var result = (eventTime - now) / 1000
-    // console.log(result)
+    // Zeit bis zur Veranstaltung in Minuten
+    var result = (eventTime - now) / 60000
 
     if (result <= 0) {
       return 'Die Veranstaltung hat bereits begonnen.'
     } else {
-      return 'In ' + Math.round(result) + ' Sekunden'
+      return 'In ' + Math.round(result) + ' Minuten'
     }
   }
 
+  /*
+   * checkString überprüft die Länge des Veranstaltungsnamen
+   * und passt gegebenenfalls die Schriftgröße an
+   */
   var checkString = function (string) {
-    // console.log('Length: ' + string.length)
     if (string.length > 20 && string.length < 30) {
       document.querySelector('h1').style.fontSize = '1.8em'
       return string
@@ -93,6 +80,7 @@ var setEvent = function (event) {
     return string
   }
 
+  // Informationen werden in der DOM geändert
   document.querySelector('#name').innerHTML = checkString(event.name)
   document.querySelector('#description').innerHTML = event.description
   document.querySelector('#people').innerHTML = event.people
@@ -101,9 +89,13 @@ var setEvent = function (event) {
   document.querySelector('#time').innerHTML = getTime()
 }
 
+/*
+ * timeCheck pusht alle kommenden Veranstaltungen in ein Array
+ */
 var timeCheck = function (event) {
   var now = new Date()
   var mostRecent = []
+  // irgendeine große Zahl, sehr große Zahl
   var d = 1000 * 10 ^ 1000000000
 
   for (var i = 0; i < event.length; i++) {
@@ -115,26 +107,53 @@ var timeCheck = function (event) {
       mostRecent.push(event[i])
     }
   }
-
-  console.log(mostRecent[0].name)
   return mostRecent
 }
 
-nextEvent = timeCheck(event)
-setEvent(nextEvent[0])
+/*
+ * ======================
+ * ABLAUF DER APPLIKATION
+ * ======================
+ */
+var xhr = new window.XMLHttpRequest()
 
-setInterval(function () {
-  if (j === nextEvent.length) {
-    j = 0
+// starte App wenn Veranstaltungen geladen sind
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    events = JSON.parse(xhr.responseText)
+    console.log('Anzahl paralleler Veranstaltungen: ' + events.length)
+    nextEvent = timeCheck(events)
+    setEvent(nextEvent[0])
+
+    /*
+     * Timer um Twitterfeed zu aktualisieren und kommende
+     * Veranstaltungen zu rotieren
+     */
+    setInterval(function () {
+      twitterFetcher.fetch(config1)
+
+      if (j === nextEvent.length) {
+        j = 0
+      }
+      setEvent(nextEvent[j])
+      j++
+    // aktualisiert alle 5 Sekunden | 1000ms * 5 = 5s
+    }, 1000 * 5)
+
+    /*
+     * Timer um Twitterfeed zu aktualisieren und kommende
+     * Veranstaltungen zu rotieren
+     */
+    setInterval(function () {
+      nextEvent = timeCheck(events)
+      console.log('Aufkommende Veranstaltungen aktualisiert.')
+      console.log('Anzahl paralleler Veranstaltungen: ' + events.length)
+      setEvent(nextEvent[0])
+    // aktualisiert alle 5 Minuten | 1000ms * 60 * 5 = 5min
+    }, 1000 * 60 * 5)
   }
-  setEvent(nextEvent[j])
-  j++
-  console.log(j)
-}, 1000 * 5)
+}
 
-setInterval(function () {
-
-  nextEvent = timeCheck(event)
-  console.log(nextEvent)
-  setEvent(nextEvent[0])
-}, 1000 * 30)
+// lade Veranstaltungen
+xhr.open('GET', 'events.json', true)
+xhr.send()
