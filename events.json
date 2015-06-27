@@ -1,42 +1,170 @@
 [
   {
-    "time": "12:00:00",
-    "name": "Codegolf",
-    "description": "weniger ist mehr",
-    "people": "Daniel Langner, Johannes Mey",
-    "type": "Workshop",
+    "time": "13:00:00",
+    "name": "Eröffnung und Grußwort",
+    "description": " ",
+    "people": "Prof. Dr.-Ing. Franz Baader </br> Prof. Dr.-Ing. habil. Rainer Groh",
+    "type": "ACADEMIC",
+    "room": "E023"
+  },
+  {
+    "time": "13:30:00",
+    "name": "Preisverleihung",
+    "description": "Amazon-Preis für herausragende Abschlussarbeit </br> Lehmannpreis für eine herausragende studentische Abschlussarbeit im Bereich von Mathematik und Informatik </br> SAP-Dissertationspreis Woman Award",
+    "people": "",
+    "type": "ACADEMIC",
+    "room": "E023"
+  },
+  {
+    "time": "14:00:00",
+    "name": "Gastvortrag Gene Myers",
+    "description": "Director & Tschira Chair of Systems Biology Max Planck Institute for Molecular Cell Biology and Genetics",
+    "people": "",
+    "type": "ACADEMIC",
+    "room": "1069"
+  },
+  {
+    "time": "15:00:00",
+    "name": "Prozesskommunikation zum Anfassen",
+    "description": "Grafische Programmierung einer Maschine mit EVAS",
+    "people": "Stefan Mätzler",
+    "type": "VORTRAG",
     "room": "E064"
   },
   {
-    "time": "12:00:00",
+    "time": "15:00:00",
+    "name": "Efficient Database Query Processing in Heterogeneous Environments",
+    "description": " ",
+    "people": "Dirk Habich",
+    "type": "VORTRAG",
+    "room": "E010"
+  },
+  {
+    "time": "15:00:00",
+    "name": " Prozessanalyse leicht gemacht mit \"ADM\"",
+    "description": " ",
+    "people": "Manfred Benesch",
+    "type": "VORTRAG",
+    "room": "E009"
+  },
+  {
+    "time": "15:15:00",
+    "name": "RoSI:",
+    "description": "Rollenbasierte Software-Infrastrukturen für kontextsensitive Systeme",
+    "people": "Hannes Voigt",
+    "type": "VORTRAG",
+    "room": "E010"
+  },
+  {
+    "time": "15:30:00",
+    "name": "Mehr als die Summe seiner Teile:",
+    "description": "Entwicklung selbstadaptiver Anwendungen für gemischte Interaktion",
+    "people": "Maria Piechnick",
+    "type": "VORTRAG",
+    "room": "E009"
+  },
+  {
+    "time": "15:30:00",
+    "name": "Efficient Scientific Research with Scripts",
+    "description": " ",
+    "people": "Thomas Kühn",
+    "type": "VORTRAG",
+    "room": "E010"
+  },
+  {
+    "time": "15:30:00",
+    "name": "Professorenführung",
+    "description": " ",
+    "people": " ",
+    "type": " ",
+    "room": " "
+  },
+  {
+    "time": "16:00:00",
+    "name": "Codegolf",
+    "description": "weniger ist mehr",
+    "people": "Daniel Langner",
+    "type": "WORKSHOP",
+    "room": "E069"
+  },
+  {
+    "time": "16:00:00",
     "name": "3D-Modellierung",
     "description": "Grundlagen mit Blender",
     "people": "Andreas Peetz",
-    "type": "Workshop",
-    "room": "E064"
+    "type": "WORKSHOP",
+    "room": "E065"
   },
   {
-    "time": "12:00:00",
-    "name": "Der Mehrwert von Informationsvisualisierungen",
+    "time": "16:00:00",
+    "name": "Zeugnisverleihung",
     "description": " ",
-    "people": "Bettina Kirchner, Martin Herrmann, Jan Wojdziak",
-    "type": "Vortrag",
-    "room": "E064"
+    "people": " ",
+    "type": "ACADEMIC",
+    "room": "E023"
   },
   {
-    "time": "12:00:00",
-    "name": "Efficient Database Query Processing in Heterogeneous Environments",
+    "time": "16:00:00",
+    "name": "Mehrwert von Informationsvisualisierungen",
     "description": " ",
-    "people": "Tomas Karnagel",
-    "type": "Vortrag",
-    "room": "E064"
+    "people": "Jan Wojdziak",
+    "type": "VORTRAG",
+    "room": "E009"
   },
   {
-    "time": "12:01:00",
-    "name": "Mehr als die Summe seiner Teile:",
-    "description": "Entwicklung selbst-adaptiver Anwendungen für Gemischte Interaktion",
-    "people": "Maria Piechnick und Christian Piechnick",
-    "type": "Vortrag",
-    "room": "E064"
+    "time": "16:00:00",
+    "name": "Parallele Programmierung mit Charm++",
+    "description": " ",
+    "people": "Maximilian Stein",
+    "type": "VORTRAG",
+    "room": "E010"
+  },
+  {
+    "time": "16:30:00",
+    "name": "Wikidata",
+    "description": "Die freie Wissensbasis von Wikipedia",
+    "people": "Markus Krötzsch",
+    "type": "VORTRAG",
+    "room": "E009"
+  },
+  {
+    "time": "16:30:00",
+    "name": "HoneySens",
+    "description": "Automatisierte Angriffserkennung in Netzwerken",
+    "people": "Pascal Brückner",
+    "type": "VORTRAG",
+    "room": "E010"
+  },
+  {
+    "time": "17:00:00",
+    "name": "CyFace gamified",
+    "description": " ",
+    "people": "Heinrich Kuhlmann",
+    "type": "VORTRAG",
+    "room": "E009"
+  },
+  {
+    "time": "17:00:00",
+    "name": "Schülerführung",
+    "description": " ",
+    "people": " ",
+    "type": " ",
+    "room": " "
+  },
+  {
+    "time": "17:00:00",
+    "name": "Security Awareness gegen Phishing",
+    "description": " ",
+    "people": "Stephan Escher",
+    "type": "VORTRAG",
+    "room": "E010"
+  },
+  {
+    "time": "16:00:00",
+    "name": "Preisverleihung",
+    "description": "most innovative </br> most creative",
+    "people": "Prof. Dr. Michael Schefczyk </br> Katrin Kahle",
+    "type": "VORTRAG",
+    "room": "E023"
   }
 ]

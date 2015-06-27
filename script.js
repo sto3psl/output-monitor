@@ -11,7 +11,7 @@
  */
 
 // Tag an dem die Veranstaltung stattfindet
-var day = '2015/06/28'
+var day = '2015/06/27'
 
 // events enthält alle Veranstaltungen aus events.json
 var events = []
@@ -80,6 +80,19 @@ var setEvent = function (event) {
     return string
   }
 
+  // stellt Hintergrundfarbe entsprechend des Veranstaltungstyps ein
+  switch (event.type) {
+    case 'ACADEMIC':
+      document.querySelector('body').style.background = '#FFCC00'
+      break
+    case 'VORTRAG':
+      document.querySelector('body').style.background = '#97BF0D'
+      break
+    case 'WORKSHOP':
+      document.querySelector('body').style.background = '#6D1F80'
+      break
+  }
+
   // Informationen werden in der DOM geändert
   document.querySelector('#name').innerHTML = checkString(event.name)
   document.querySelector('#description').innerHTML = event.description
@@ -129,28 +142,28 @@ xhr.onreadystatechange = function () {
      * Timer um Twitterfeed zu aktualisieren und kommende
      * Veranstaltungen zu rotieren
      */
-    setInterval(function () {
-      twitterFetcher.fetch(config1)
+    // setInterval(function () {
+    //   twitterFetcher.fetch(config1)
 
-      if (j === nextEvent.length) {
-        j = 0
-      }
-      setEvent(nextEvent[j])
-      j++
-    // aktualisiert alle 5 Sekunden | 1000ms * 5 = 5s
-    }, 1000 * 5)
+    //   if (j === nextEvent.length) {
+    //     j = 0
+    //   }
+    //   setEvent(nextEvent[j])
+    //   j++
+    // // aktualisiert alle 5 Sekunden | 1000ms * 5 = 5s
+    // }, 1000 * 5)
 
     /*
      * Timer um Twitterfeed zu aktualisieren und kommende
      * Veranstaltungen zu rotieren
      */
-    setInterval(function () {
-      nextEvent = timeCheck(events)
-      console.log('Aufkommende Veranstaltungen aktualisiert.')
-      console.log('Anzahl paralleler Veranstaltungen: ' + events.length)
-      setEvent(nextEvent[0])
-    // aktualisiert alle 5 Minuten | 1000ms * 60 * 5 = 5min
-    }, 1000 * 60 * 5)
+    // setInterval(function () {
+    //   nextEvent = timeCheck(events)
+    //   console.log('Aufkommende Veranstaltungen aktualisiert.')
+    //   console.log('Anzahl paralleler Veranstaltungen: ' + events.length)
+    //   setEvent(nextEvent[0])
+    // // aktualisiert alle 5 Minuten | 1000ms * 60 * 5 = 5min
+    // }, 1000 * 60 * 5)
   }
 }
 

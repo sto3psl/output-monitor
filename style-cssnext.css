@@ -50,6 +50,11 @@ h2 {
   font-size: 1.6em;
 }
 
+h3 {
+  font-weight: normal;
+  align-self: flex-end;
+}
+
 /*Twitter Feed*/
 section {
   background: #fff;
@@ -110,12 +115,14 @@ main {
 
 .logo {
   display: flex;
+  flex-direction: column;
   height: var(--border);
   justify-content: flex-end;
 }
 
 .logo object {
   height: 100%;
+  align-self: flex-end;
 }
 
 .cube {
