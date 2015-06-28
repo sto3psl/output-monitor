@@ -3330,7 +3330,7 @@ section {
   background: #fff;
   font-size: 19px;
   font-size: 1.2rem;
-  overflow: scroll;
+  overflow: hidden;
   padding: 5vw;
   width: 30vw;
 }
