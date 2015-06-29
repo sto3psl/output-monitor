@@ -12,8 +12,7 @@
 
 // heute
 var today = new Date()
-// var day = (today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate())
-var day = '2015/06/30'
+var day = (today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate())
 
 // events enthält alle Veranstaltungen aus events.json
 var events = []
