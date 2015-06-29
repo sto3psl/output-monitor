@@ -157,10 +157,12 @@ xhr.onreadystatechange = function () {
       console.log(nextEvent.length)
       setEvent(nextEvent[j])
       // fadeOut der "alten" Veranstaltung nach 9s | 1000ms * 9 = 9s
-      setTimeout(function () {
-        document.querySelector('#information').className = 'animated fadeOut'
-        document.querySelector('#type').className = 'animated fadeOut'
-      }, displayDuration - 1000)
+      if (nextEvent.length > 2) {
+        setTimeout(function () {
+          document.querySelector('#information').className = 'animated fadeOut'
+          document.querySelector('#type').className = 'animated fadeOut'
+        }, displayDuration - 1000)
+      }
       j++
 
     // aktualisiert alle 10 Sekunden | 1000ms * 10 = 10s
