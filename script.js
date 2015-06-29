@@ -12,7 +12,8 @@
 
 // heute
 var today = new Date()
-var day = (today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate())
+// var day = (today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate())
+var day = '2015/06/30'
 
 // events enthält alle Veranstaltungen aus events.json
 var events = []
@@ -73,8 +74,11 @@ var setEvent = function (event) {
    * und passt gegebenenfalls die Schriftgröße an
    */
   var checkString = function (string) {
-    if (string.length > 20 && string.length < 30) {
-      document.querySelector('h1').style.fontSize = '1.8em'
+    if (string.length < 20) {
+      document.querySelector('h1').style.fontSize = '2.6em'
+      return string
+    } else if(string.length > 20 && string.length < 30) {
+      document.querySelector('h1').style.fontSize = '2em'
       return string
     } else if (string.length > 30) {
       document.querySelector('h1').style.fontSize = '1.7em'
@@ -104,7 +108,7 @@ var setEvent = function (event) {
   document.querySelector('#description').innerHTML = event.description
   document.querySelector('#people').innerHTML = event.people
   document.querySelector('#type').innerHTML = event.type
-  document.querySelector('#room').innerHTML = 'Raum ' + event.room
+  document.querySelector('#room').innerHTML = event.room
   document.querySelector('#time').innerHTML = getTime()
 }
 
@@ -134,6 +138,14 @@ var timeCheck = function (event) {
  * ABLAUF DER APPLIKATION
  * ======================
  */
+
+/*
+ * Update des Twitterfeed
+ */
+setInterval(function () {
+  twitterFetcher.fetch(config1)
+  console.log('twitter updated')
+}, 1000 * 10)
 var xhr = new window.XMLHttpRequest()
 
 // starte App wenn Veranstaltungen geladen sind
@@ -145,12 +157,9 @@ xhr.onreadystatechange = function () {
 
     var displayDuration = 1000 * 10
     /*
-     * Timer um Twitterfeed zu aktualisieren und kommende
-     * Veranstaltungen zu rotieren
+     * Timer um kommende Veranstaltungen zu rotieren
      */
     setInterval(function () {
-      twitterFetcher.fetch(config1)
-
       if (j === nextEvent.length) {
         j = 0
       }
