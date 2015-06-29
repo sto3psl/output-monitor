@@ -157,7 +157,7 @@ xhr.onreadystatechange = function () {
       console.log(nextEvent.length)
       setEvent(nextEvent[j])
       // fadeOut der "alten" Veranstaltung nach 9s | 1000ms * 9 = 9s
-      if (nextEvent.length > 2) {
+      if (nextEvent.length >= 2) {
         setTimeout(function () {
           document.querySelector('#information').className = 'animated fadeOut'
           document.querySelector('#type').className = 'animated fadeOut'
